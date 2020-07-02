@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="orderManager" class="com.ba.beans.OrderManager">
+	<property name="blueDartDelivery" ref="blueDart"></property>
+	<property name="dtdcDelivery" ref="dtdc"></property>
+</bean>
+<alias name="dtdc" alias="blueDart"/>
+	<!-- <bean id="blueDart" class="com.ba.beans.BluedartDeliveryImpl"></bean> -->
+	<bean id="dtdc" class="com.ba.beans.DtdcDeliveryImpl"></bean>
+	<bean id="address" class="com.ba.beans.Address">
+		<property name="street" value="rvp"></property>
+		<property name="city" value="mpl"></property>
+		<property name="state" value="ap"></property>
+		<property name="zipcode" value="30111"></property>
+	</bean>
+</beans>
